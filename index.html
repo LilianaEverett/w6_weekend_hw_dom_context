@@ -7,63 +7,73 @@
         <script src="js/app.js"></script>
     </head>
     <body>
-        <h2>Add a new important event</h2>
-
-        <form id="new-item-form">
-            <div id="form-wrapper">
-                <div class="form-item">
-                    <label for="event" class="primary">Event: </label>
-                    <input type="text" id="event" required/>
+        <div class="form-buttons">
+                <h2>Add a new important event</h2>
+                <div class="form">
+                    <form id="new-item-form">
+                        <div id="form-wrapper">
+                            <div class="form-item">
+                                <label for="event" class="form-title">Event: </label>
+                                <input type="text" id="event" />
+                            </div>
+            
+                            <div class="form-item">
+                                <label for="date" class="form-title">Date: </label>
+                                <input type="text" id="date" />
+                            </div>
+            
+                            <!-- <div class="form-item">
+                                <label for="continent" class="primary">Continent: </label>
+                                <select id="continent">
+                                    <option value="" disabled selected></option>
+                                    <option value="Europe">Europe</option>
+                                    <option value="North America">North America</option>
+                                    <option value="South America">South America</option>
+                                    <option value="Asia">Asia</option>
+                                    <option value="Oceania">Oceania</option>
+                                </select>
+                            </div> -->
+                            <div class="form-item">
+                                <label for="continent" class="form-title">Select a continent: </label>
+                            </div>
+        
+                            <div class="form-item-radio">
+                                <label for="europe" class="primary">Europe:</label>
+                                <input type="radio" class="radio-input" id="europe" value="europe" name="continent">
+            
+                                <label for="asia" class="primary">Asia:</label>
+                                <input type="radio" class="radio-input" id="asia" value="asia" name="continent">
+            
+                                <label for="north-america" class="primary">North America:</label>
+                                <input type="radio" class="radio-input" id="north_america" value="north-america" name="continent">
+            
+                                <label for="south-america" class="primary">South America:</label>
+                                <input type="radio" class="radio-input" id="south_america" value="south-america" name="continent">
+            
+                                <label for="oceania" class="primary">Oceania:</label>
+                                <input type="radio" class="radio-input" id="oceania" value="oceania" name="continent">
+            
+                            </div>
+            
+                            <div class="form-item">
+                                <label for="description" class="form-title">Description: </label>
+                                <input type="text" id="description" />
+                            </div>
+                        </div>
+                        <div class="">
+                            <input type="submit" class="button" value="SAVE EVENT"/>
+                        </div>
+                    </form>
                 </div>
-
-                <div class="form-item">
-                    <label for="date" class="primary">Date: </label>
-                    <input type="text" id="date" required/>
+                <div class="">
+                    <button id="delete-all" class="button" >DELETE ALL EVENTS</button>
                 </div>
+        </div>
 
-                <!-- <div class="form-item">
-                    <label for="continent" class="primary">Continent: </label>
-                    <select id="continent">
-                        <option value="" disabled selected></option>
-                        <option value="Europe">Europe</option>
-                        <option value="North America">North America</option>
-                        <option value="South America">South America</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Oceania">Oceania</option>
-                    </select>
-                </div> -->
-
-                <div class="form-item">
-                    <label for="continent">Select a continent: </label>
-                    <label for="europe" class="primary">Europe</label>
-                    <input type="radio" id="europe" value="europe" name="continent">
-
-                    <label for="asia" class="primary">Asia</label>
-                    <input type="radio" id="asia" value="asia" name="continent">
-
-                    <label for="north-america" class="primary">North America</label>
-                    <input type="radio" id="north_america" value="north-america" name="continent">
-
-                    <label for="south-america" class="primary">South America</label>
-                    <input type="radio" id="south_america" value="south-america" name="continent">
-
-                    <label for="oceania" class="primary">Oceania</label>
-                    <input type="radio" id="oceania" value="oceania" name="continent">
-
-                </div>
-
-                <div class="form-item">
-                    <label for="description" class="primary">Description: </label>
-                    <input type="text" id="description" required/>
-                </div>
-            </div>
-            <input type="submit" value="SAVE EVENT"/>
-        </form>
-
-        <button id="delete-all">DELETE ALL EVENTS</button>
-
-        <h1>The Most Important Moments and Events in History</h1>
-        <ul id="events-list"></ul>
+        <h1>The Most Important Events in History</h1>
+        <div class="events-list-div">
+            <ul id="events-list"></ul>
+        </div>
 
     </body>
 </html>
