@@ -19,7 +19,8 @@ const handleNewItemFormSubmit = function (event) {
 
 const createEventListItem = function (form) {
     console.log('form', form)
-    console.log('continent', banana)
+    console.log('europe', form.europe.checked);
+    console.log('asia', form.asia.checked);
     const eventListItem = document.createElement('li');
     eventListItem.classList.add('event-list-item');
 
@@ -31,22 +32,23 @@ const createEventListItem = function (form) {
     date.textContent = form.date.value;
     eventListItem.appendChild(date);
 
-    // const europe = document.createElement('h3');
-    // europe.textContent = form.europe.value;
-    // eventListItem.appendChild(europe);
+    const continents = document.createElement('h3');
+    let continentValue = "";
+    if (form.europe.checked) {
+        continentValue = "Europe"
+    } else if (form.asia.checked) {
+        continentValue = "Asia"
+    } else if (form.north_america.checked) {
+        continentValue = "North America"
+    } else if (form.south_america.checked) {
+        continentValue = "South America"
+    } else {
+        continentValue = "Oceania"
+    }
+    continents.textContent = continentValue;
+    eventListItem.appendChild(continents);
 
-    const continent = document.getElementById('banana')
-    const cont = document.createElement('h3');
-    if (cont === continent.value){
-        cont.textContent = form.cont.value;
-        eventListItem.appendChild(cont);
-        return cont
-    };
-    // const asia = document.createElement('h3');
-    // asia.textContent = form.asia.value;
-    // eventListItem.appendChild(asia);
-
-    const description = document.createElement('h3');
+    const description = document.createElement('p');
     description.textContent = form.description.value;
     eventListItem.appendChild(description);
 
