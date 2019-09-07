@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const deleteAllButton = document.querySelector('#delete-all');
     deleteAllButton.addEventListener('click', handleDeleteAllClick);
+
+
 })
 
 const handleNewItemFormSubmit = function (event) {
@@ -18,6 +20,8 @@ const handleNewItemFormSubmit = function (event) {
 }
 
 const createEventListItem = function (form) {
+    const eventList = document.querySelector('#events-list');
+
     console.log('form', form)
     console.log('europe', form.europe.checked);
     console.log('asia', form.asia.checked);
@@ -51,6 +55,14 @@ const createEventListItem = function (form) {
     const description = document.createElement('p');
     description.textContent = form.description.value;
     eventListItem.appendChild(description);
+
+    const deleteItemButton = document.createElement("BUTTON");
+    deleteItemButton.innerHTML = "Delete Event";
+    eventListItem.appendChild(deleteItemButton);
+
+    deleteItemButton.onclick = function(event) {
+        eventList.removeChild(eventListItem);
+    }
 
     return eventListItem;
 }
