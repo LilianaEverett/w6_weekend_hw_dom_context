@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const handleNewItemFormSubmit = function (event) {
-    console.log(event);
+    console.log('event', event);
     event.preventDefault();
 
     const eventListItem = createEventListItem(event.target);
@@ -18,6 +18,8 @@ const handleNewItemFormSubmit = function (event) {
 }
 
 const createEventListItem = function (form) {
+    console.log('form', form)
+    console.log('continent', banana)
     const eventListItem = document.createElement('li');
     eventListItem.classList.add('event-list-item');
 
@@ -29,9 +31,20 @@ const createEventListItem = function (form) {
     date.textContent = form.date.value;
     eventListItem.appendChild(date);
 
-    const continent = document.createElement('h3');
-    continent.textContent = form.continent.value;
-    eventListItem.appendChild(continent);
+    // const europe = document.createElement('h3');
+    // europe.textContent = form.europe.value;
+    // eventListItem.appendChild(europe);
+
+    const continent = document.getElementById('banana')
+    const cont = document.createElement('h3');
+    if (cont === continent.value){
+        cont.textContent = form.cont.value;
+        eventListItem.appendChild(cont);
+        return cont
+    };
+    // const asia = document.createElement('h3');
+    // asia.textContent = form.asia.value;
+    // eventListItem.appendChild(asia);
 
     const description = document.createElement('h3');
     description.textContent = form.description.value;
